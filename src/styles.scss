@@ -66,23 +66,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .centered-card-flex {
   display: flex;
-  align-content: center;
-  margin: 5
-  0px;
+  margin: 50px;
 }
 
 .centered-content-flex {
   display: flex;
-  align-content: center;
+  justify-content: center;
   padding: 30px;
 }
   
 .buttons-predefined-questions {
   @include mat.button-color($theme, $color-variant: primary);
 }
+
 .button-container {
   display: flex;
   justify-content: space-evenly;
+  
+  button { // Assuming the buttons are direct children of the container
+    margin: 15px; // Adjust as needed
+    padding: 25px;
+  }
 }
 
 .angular-logo-container {
@@ -95,4 +99,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     max-width: 10%; // This ensures the image doesn't overflow the container
     object-fit: contain; // This ensures the image maintains its aspect ratio
   }
+}
+
+.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-input-styling {
+  display: flex;
+  justify-content: space-evenly;
 }
