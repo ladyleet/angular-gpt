@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="button-container">
-      <button mat-raised-button class="buttons-predefined-questions">What's new in Angular 17?</button>
+      <button (click)="onClickForPrePromptButtons('What\'s new in Angular 17?')" mat-raised-button class="buttons-predefined-questions">What's new in Angular 17?</button>
       <button mat-raised-button color="accent">Are there any breaking changes in Angular 17? </button>
       <button mat-raised-button color="accent">How do I use Material 3 in Angular 17?</button>
     </div>
@@ -21,12 +21,13 @@
       <button mat-raised-button color="accent">What are best practices for building Angular applications?</button>
     </div>
     <div class="form-input-styling">
-      <p>Ask a question!</p>
-      <mat-form-field class="full-width">
-        <mat-label>Textarea</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Submit</button>
+      <form (ngSubmit)="onSubmitForForm()" [formGroup]="angularQuestionForm">
+        <mat-form-field class="full-width">
+          <mat-label>ask me a question!</mat-label>
+          <textarea formControlName="question" matInput></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Submit</button>
+      </form>
     </div>
   </mat-card-content>
 </mat-card>
