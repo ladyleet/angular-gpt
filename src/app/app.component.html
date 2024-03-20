@@ -3,12 +3,31 @@
     <div class="angular-logo-container">
       <img src="assets/angular_gradient.png" alt="Angular Logo">
     </div>
-    <div class="centered-content-flex">
-      Angular GPT knows Angular 17 inside and out! Ask away about the latest features that sparked the Angular Renaissance. From the power of signal-based reactivity for a lightning-fast app to the independence of standalone components, get the scoop on everything that makes Angular 17 so exciting.  Let's build something amazing together!
+    <div>
+      <p class="centered-content-flex">
+        Angular GPT knows Angular 17 inside and out! Ask away about the latest features that sparked the Angular Renaissance. From the power of signal-based reactivity for a lightning-fast app to the independence of standalone components, get the scoop on everything that makes Angular 17 so exciting.  Let's build something amazing together!
+      </p>
+      <p class="centered-content-flex">
+        Check out some pre-determined questions below!
+      </p>
     </div>
     <div class="button-container">
-      <button mat-raised-button class="buttons-predefined-questions">Primary m3</button>
-      <button mat-raised-button color="accent">Back Compat</button>
+      <button (click)="onClickForPrePromptButtons('What\'s new in Angular 17?')" mat-raised-button class="buttons-predefined-questions">What's new in Angular 17?</button>
+      <button mat-raised-button color="accent">Are there any breaking changes in Angular 17? </button>
+      <button mat-raised-button color="accent">How do I use Material 3 in Angular 17?</button>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button class="buttons-predefined-questions">How to upgrade an Angular 16 project to Angular 17?</button>
+      <button mat-raised-button color="accent">What are best practices for building Angular applications?</button>
+    </div>
+    <div class="form-input-styling">
+      <form (ngSubmit)="onSubmitForForm()" [formGroup]="angularQuestionForm">
+        <mat-form-field class="full-width">
+          <mat-label>ask me a question!</mat-label>
+          <textarea formControlName="question" matInput></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Submit</button>
+      </form>
     </div>
   </mat-card-content>
 </mat-card>
